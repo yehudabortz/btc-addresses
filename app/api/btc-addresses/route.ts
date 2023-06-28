@@ -34,7 +34,7 @@ const organizeDataPoints = (data: TBitcoinBalanceChunk[]): TAllChartData => {
 };
 
 import { NextResponse } from "next/server";
-const getBtcAddressesData = (): Promise<TBitcoinBalanceChunk[]> => {
+const getBtcAddressesData = (): Promise<TAllChartData> => {
   return new Promise((resolve, reject) => {
     const data: TBitcoinBalanceChunk[] = [];
     const file = fs.createReadStream(
@@ -58,7 +58,7 @@ const getBtcAddressesData = (): Promise<TBitcoinBalanceChunk[]> => {
       })
       .on("end", () => {
         const chartData = organizeDataPoints(data);
-        resolve(chartData as any);
+        resolve(chartData);
       })
       .on("error", (error) => {
         reject(error);
