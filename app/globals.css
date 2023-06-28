@@ -8,3 +8,7 @@
   font-weight: 700;
   font-display: swap;
 }
+
+.highcharts-credits {
+  display: none;
+}

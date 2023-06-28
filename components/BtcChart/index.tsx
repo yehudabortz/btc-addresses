@@ -2,6 +2,7 @@
 
 import 'client-only';
 
+import { format } from "date-fns"
 import Highcharts, { Options, SeriesOptionsType, TooltipFormatterContextObject } from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 import { abbreviateNumber } from "js-abbreviation-number";
@@ -59,7 +60,7 @@ const BtcChart = ({ data }: Props) => {
               `<span style="color:${point?.color}">\u25CF</span> ${point?.series.name
               }: <b>${abbreviateNumber(point.y as number, 2)}</b><br/>`,
           )
-          .join('');
+          .join('') + `</b><br/><span>${this.points && format(this.points[0].x as number, "MMM d, yyyy")}</span>`
       },
     },
     series: seriesData as SeriesOptionsType[],
