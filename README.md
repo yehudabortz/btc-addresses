@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Startup
 
-## Getting Started
+1. `npm install`
 
-First, run the development server:
+2. `npm run dev`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## BTC Address Balance Chart Challenge
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create an area or line chart that displays an all-time historic view on btc address balances.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Draw 5 lines in different colors displaying balances
 
-## Learn More
+- over $1k
+- over $10k
+- over $100k
+- over $1M
+- over $10M
 
-To learn more about Next.js, take a look at the following resources:
+Display a legend that labels each line color.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+See "Example Implementation" to get an idea of how the chart should look like.
+An ideal implementation would include all features you can see in the example.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Implementation Notes:
 
-## Deploy on Vercel
+- Use a charting engine you feel most comfortable with
+- Use the static data provided (`data/Coin_Metrics_Network_Data_2023-02-02T14-32.csv`) to build an API method
+  (`pages/api/btc-addresses`)
+  - Format the CSV and return JSON timeseries for your charting engine
+  - Call the API to load the data inside of your react component
+  - Note: The CSV file is now outdated and won't provide any data after 02/2023 but you could compare your implementation with our example screenshot by changing your system clock to February 23.
+- Make the chart look nice and clean (either by utilizing the example as a design template or give it your personal UI touch)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Bonus Points
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Add buttons and filter functionality to filter the chart by YTD, 12M, 3M and 1M.
+- Improve performance by leveraging server side rendering
