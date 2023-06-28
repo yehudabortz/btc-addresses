@@ -26,8 +26,8 @@ An ideal implementation would include all features you can see in the example.
 ### Implementation Notes:
 
 - Use a charting engine you feel most comfortable with
-- Use the static data provided (`data/Coin_Metrics_Network_Data_2023-02-02T14-32.csv`) to build an API method
-  (`pages/api/btc-addresses`)
+- Use the static data provided (`public/Coin_Metrics_Network_Data_2023-02-02T14-32.csv`) to build an API method
+  (`api/btc-addresses`)
   - Format the CSV and return JSON timeseries for your charting engine
   - Call the API to load the data inside of your react component
   - Note: The CSV file is now outdated and won't provide any data after 02/2023 but you could compare your implementation with our example screenshot by changing your system clock to February 23.
