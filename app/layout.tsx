@@ -16,7 +16,7 @@ export default function RootLayout({
       <body className={clsx(inter.className, "text-black max-w-screen-2xl w-[90vw] m-auto")} >
         <header className="pt-12">
           <div className="container m-auto flex-col gap-4">
-            <h1 className="font-bold text-gray-900 text-2xl text-center">
+            <h1 className="font-bold text-gray-900 text-4xl text-center">
               BTC Address Balances Over Time
             </h1>
           </div>
