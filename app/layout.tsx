@@ -1,4 +1,5 @@
 import "server-only"
+import { Analytics } from '@vercel/analytics/react';
 
 import clsx from 'clsx'
 import './globals.css'
@@ -13,6 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" >
+      <Analytics />
       <body className={clsx(inter.className, "text-black max-w-screen-2xl w-[90vw] m-auto")} >
         <header className="pt-12">
           <div className="container m-auto flex-col gap-4">
